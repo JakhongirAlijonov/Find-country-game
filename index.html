@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find country</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h3 class="counter-title">
+            Score: <span class="counter"> 0</span>
+        </h3>
+        <div class="selector">
+            <p class="select-title">Difficulty:</p>
+            <select name="" id="level">
+                <option value="easy" >easy</option>
+                <option value="medium" >medium </option>
+                <option value="hard" >hard</option>
+            </select>
+
+        </div>
+        <h3 class="time-title">Time: <span class="time">15</span></h3>
+    </header>
+    <div class="container">
+        <img src="undraw_world_re_768g.svg" id="image" class="img" alt="" width="450" height="250">
+        <div class="buttons">
+            <h4 class="buttons-title">Find the country of this flag</h4>
+            <button type="button" class="btn first">Country1</button>
+            <button type="button" class="btn">Country2</button>
+
+        </div>
+
+    </div>
+    <div class="brackdrop hidden"></div>
+    <div class="modal hidden">
+        <header class="modal-header">
+            <h3 class="modal-title">Game over</h3>
+
+        </header>
+        <p class="modal-score">Your score: <span class="counter-modal"></span></p>
+        <button class="again">Play again</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
