@@ -7,20 +7,25 @@ const modal = document.querySelector('.modal')
 const brackdrop = document.querySelector('.brackdrop')
 const modalCounter = document.querySelector('.counter-modal')
 const again = document.querySelector('.again')
+const loading = document.getElementById('loading')
 mainFunc()
 newGame()
 let randomFlag
 
 function mainFunc(main) {
 
-    fetch('https://restcountries.com/v2/all')
-        .then(function getDatas(data) {
-            return data.json()
-        })
-        .then(getData)
+    const fetchData = async() => {
+        loading.textContent = `Loading please wait ⏲️`
+        const req = await fetch('https://restcountries.com/v2/all')
+        const json = await req.json()
+        getData(json)
+    }
 
+    fetchData()
 
     function getData(datas) {
+        loading.textContent = ``
+        loading.style.display = 'none'
         let raandomNum = Math.trunc((Math.random() * 250))
         randomFlag = datas[raandomNum]
         img.setAttribute('src', randomFlag.flags.png)
@@ -70,21 +75,30 @@ function newGame() {
 
 
     level.addEventListener('change', () => {
-        levelChanger()
+        mainFunc
+        levelChanger
+
+
 
     })
 
     function levelChanger() {
 
         levelChange = level.value
-        console.log(levelChange);
+
 
         if (levelChange == 'easy') {
+            mainFunc
             time += 5
-        } else if (levelChange == 'medium') {
-            time += 3
-        } else time += 2
 
+        } else if (levelChange == 'medium') {
+            mainFunc
+            time += 3
+
+        } else {
+            mainFunc
+            time += 2
+        }
 
     }
 
