@@ -8,8 +8,13 @@ const brackdrop = document.querySelector('.brackdrop')
 const modalCounter = document.querySelector('.counter-modal')
 const again = document.querySelector('.again')
 const loading = document.getElementById('loading')
-mainFunc()
-newGame()
+const startGame = document.querySelector('.startGame')
+
+startGame.addEventListener('click', () => {
+    mainFunc()
+    newGame()
+    startGame.style.display = 'none'
+})
 let randomFlag
 
 function mainFunc(main) {

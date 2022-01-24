@@ -63,7 +63,8 @@ select {
     margin-top: 30px;
 }
 
-.btn {
+.btn,
+.startGame {
     font-size: 24px;
     border-radius: 8px;
     border: none;
@@ -73,8 +74,10 @@ select {
     background-color: #66FCF1;
 }
 
-.first {
-    margin-right: 45px;
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .brackdrop {
